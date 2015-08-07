@@ -1,6 +1,6 @@
 {
-  "name": "component-tester",
-  "version": "0.0.3",
+  "name": "component-viewer",
+  "version": "0.1.0",
   "description": "test and visualize gui components",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
   "author": "watercell",
   "license": "proprietary",
   "dependencies": {
-    "babel-core": "^5.8.21",
     "browser-sync": "^2.8.2",
     "coffeeify": "^1.1.0",
     "css-loader": "^0.15.6",
@@ -25,13 +24,13 @@
     "gulp-util": "^3.0.6",
     "imports-loader": "^0.6.4",
     "lodash": "^3.10.1",
-    "node-libs-browser": "^0.5.2",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.12.3",
     "webpack": "^1.11.0"
   },
   "devDependencies": {
     "babel": "^5.8.21",
+    "babel-core": "^5.8.21",
     "babel-loader": "^5.3.2",
     "browserify": "^11.0.1",
     "chai": "^3.2.0",
