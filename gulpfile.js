@@ -37,10 +37,8 @@ gulp.task('once', function () {
   once = true;
 });
 
-var karma = require('karma').server;
-var nightwatch = require('gulp-nightwatch');
-
 gulp.task('test', function (done) {
+  var karma = require('karma').server;
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: once
@@ -48,6 +46,7 @@ gulp.task('test', function (done) {
 });
 
 gulp.task('nightwatch', function() {
+  var nightwatch = require('gulp-nightwatch');
   gulp.src('')
     .pipe(nightwatch({
       configFile: 'test/nightwatch.json',
