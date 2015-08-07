@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 
 var path = require("path");
-var glob = require('glob');
 
 var jeet = require('jeet');
 var kouto = require("kouto-swiss");
