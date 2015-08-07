@@ -1,0 +1,13 @@
+#content
+
+each style in styles
+  script.
+    var e = document.createElement('link');
+    e.setAttribute('href', '/#{style}');
+    e.setAttribute('rel', 'stylesheet');
+    document.head.appendChild(e);
+
+script.
+  window.scenario = '#{scenario}';
+
+script(async, src='#{componentSource}')

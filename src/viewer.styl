@@ -1,0 +1,88 @@
+@import 'kouto-swiss'
+@import 'jeet'
+
+$seed_color = #a4b
+
+$analogous = extended-analogous($seed_color)
+
+$header-height = 80px
+$sidebar-width = 250px
+$sidebar-padding = 5px
+
+normalize()
+
+body
+  font-family font-stack("Futura")
+  background-color lightgrey
+
+viewer-main
+  background-color $analogous[0]
+
+viewer-header
+  height $header-height
+  position absolute
+  width 100%
+  background-color $analogous[2]
+  box-shadow 0 0 10px #000000;
+  h1
+    padding-left 2rem
+
+viewer-sidebar
+  overflow-y auto
+  background-color $analogous[1]
+  box-shadow 0 0 10px #000000;
+
+  position absolute
+  width: $sidebar-width
+  top $header-height
+  left 0
+  bottom 0
+
+viewer-options
+  display block
+  background-color $analogous[2]
+  padding $sidebar-padding
+
+viewer-component-list
+  h4
+    text-align center
+
+viewer-component
+  display block
+  border-bottom 1px solid white
+  div
+    padding $sidebar-padding
+  .inner
+    background-color $analogous[2]
+    &.selected
+      background-color yellow
+  .scenario
+    background-color white
+    &.selected
+      background-color lightgrey
+
+viewer-frame
+  position absolute
+  left $sidebar-width
+  top 80px
+  bottom 0
+  right 0
+
+  background-image url('/scale.png')
+  background-repeat repeat-x
+  padding 5px
+  margin 8px
+
+  .container
+    border-right 1px solid black
+    border-bottom 1px solid black
+    display inline-block
+
+    iframe
+      border none
+      box-shadow 7px 8px 10px -2px #555
+      background-color white
+      width 400px
+      height 300px
+
+      display block
