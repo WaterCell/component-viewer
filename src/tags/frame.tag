@@ -102,5 +102,37 @@
       }
       this.setSize(dim.width, dim.height);
     });
+
+    window.onload = () => {
+
+      if (! location.search){ return; }
+
+      let query_params = location.search.substr(1).split('&');
+      let params = {};
+      for (let i in query_params){
+        let param = query_params[i].split('=');
+        params[param[0]] = decodeURIComponent(param[1]);
+      }
+
+
+      // select scenario from query parameter
+
+      let scenarios = [];
+
+      let inners = document.querySelectorAll('viewer-component > div.inner');
+      for(let inner of inners) {
+        if (inner.textContent == params['inner']){
+          inner.onclick();
+          scenarios = inner.parentNode.querySelectorAll('.scenario');
+        }
+      }
+
+      for(let scenario of scenarios) {
+        if (scenario.textContent == params['scenario']){
+          scenario.onclick();
+        }
+      }
+
+    }
   </script>
 </viewer-frame>
