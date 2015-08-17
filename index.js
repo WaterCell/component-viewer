@@ -55,12 +55,12 @@ function build_config(opts, entry, extra_loaders, extra_preLoaders) {
   return options;
 }
 
-function start_browserSync(watch, styles, assets) {
+function start_browserSync(watch, styles, assets, port) {
   browserSync({
     ui: false,
     open: false,
     files: _.flattenDeep([].concat(watch || [], styles || [], (assets && assets + '**/*') || [])),
-    port: 3000,
+    port: port || 3000,
     snippetOptions: {
       blacklist: ['/viewer.html', 'index.html']
     },
@@ -143,5 +143,5 @@ module.exports = function(opts) {
     }
   });
 
-  start_browserSync(opts.watch, opts.styles, opts.assets);
+  start_browserSync(opts.watch, opts.styles, opts.assets, opts.port);
 }
