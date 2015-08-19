@@ -13,6 +13,8 @@
           scenario: this.currentScenario,
           styles: this.opts.styles
         }));
+
+        document.documentElement.className = '';
       }
     }
 
@@ -106,6 +108,7 @@
     window.onload = () => {
 
       if (! location.search){ return; }
+      document.documentElement.className = 'reftest-wait"';
 
       let query_params = location.search.substr(1).split('&');
       let params = {};
