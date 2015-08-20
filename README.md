@@ -28,12 +28,6 @@ $ npm start
 $ npm run test
 ```
 
-### reftest
-
-```bash
-$ npm run reftest -- --targetB http://localhost:3000 --targetA "http://localhost:3000/viewer.html?inner=header.riot&scenario=scenario%202" --useExternalServer -b firefox
-```
-
 ## Licence
 
 [MIT](https://github.com/WaterCell/component-viewer/blob/master/LICENSE)
