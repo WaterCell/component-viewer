@@ -4,6 +4,7 @@
   "description": "test and visualize gui components",
   "main": "index.js",
   "scripts": {
+    "start": "gulp components",
     "compile": "babel -o lib/scenario-loader.js src/scenario-loader.js && babel -d lib/loaders/ src/loaders/ && webpack",
     "prepublish": "npm run compile",
     "test": "gulp test"
