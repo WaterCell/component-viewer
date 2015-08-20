@@ -13,6 +13,8 @@
           scenario: this.currentScenario,
           styles: this.opts.styles
         }));
+
+        document.documentElement.className = '';
       }
     }
 
@@ -106,6 +108,7 @@
     window.onload = () => {
 
       if (! location.search){ return; }
+      document.documentElement.className = 'reftest-wait"';
 
       let query_params = location.search.substr(1).split('&');
       let params = {};
@@ -122,14 +125,14 @@
       let inners = document.querySelectorAll('viewer-component > div.inner');
       for(let inner of inners) {
         if (inner.textContent == params['inner']){
-          inner.onclick();
+          inner.click();
           scenarios = inner.parentNode.querySelectorAll('.scenario');
         }
       }
 
       for(let scenario of scenarios) {
         if (scenario.textContent == params['scenario']){
-          scenario.onclick();
+          scenario.click();
         }
       }
 
