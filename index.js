@@ -8,6 +8,10 @@ var fs = require('fs');
 var path = require("path");
 var glob = require('glob');
 
+var express = require('express')
+var serveStatic = require('serve-static')
+
+
 function buildImportString(components, styles) {
   var result = "imports?components=>" + encodeURIComponent(JSON.stringify(components))
   result += "&styles=>" + encodeURIComponent(JSON.stringify(styles));
@@ -70,6 +74,23 @@ function start_browserSync(watch, styles, assets, port) {
   });
 
 }
+
+function start_express(watch, styles, assets, port) {
+
+  var app = express()
+  port = port || 3000;
+
+  app.use(serveStatic(__dirname + '/.tmp/'))
+  app.use(serveStatic(__dirname +'/lib'))
+  app.use(serveStatic(__dirname +'//lib/assets'))
+  app.use(serveStatic(assets))
+
+  app.listen(port)
+  console.log('start listening on http://localhost:' +port);
+
+}
+
+
 
 function map_styles(styles, assets) {
   var resolved_styles = [];
@@ -143,5 +164,10 @@ module.exports = function(opts) {
     }
   });
 
-  start_browserSync(opts.watch, opts.styles, opts.assets, opts.port);
+  if(opts.use_statilc_only){
+    start_express(opts.watch, opts.styles, opts.assets, opts.port);
+  } else {
+    start_browserSync(opts.watch, opts.styles, opts.assets, opts.port);
+
+  }
 }

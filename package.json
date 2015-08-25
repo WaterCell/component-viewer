@@ -20,10 +20,12 @@
     "browser-sync": "^2.8.2",
     "coffeeify": "^1.1.0",
     "css-loader": "^0.15.6",
+    "express": "^4.13.3",
     "glob": "^5.0.14",
     "imports-loader": "^0.6.4",
     "lodash": "^3.10.1",
     "raw-loader": "^0.5.1",
+    "serve-static": "^1.10.0",
     "style-loader": "^0.12.3",
     "webpack": "^1.11.0"
   },
