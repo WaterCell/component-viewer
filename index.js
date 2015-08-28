@@ -80,7 +80,7 @@ function start_express(watch, styles, assets, port) {
   var app = express()
   port = port || 3000;
 
-  app.use(serveStatic(__dirname + '/.tmp/'))
+  app.use(serveStatic(__dirname + '/.tmp'))
   app.use(serveStatic(__dirname +'/lib'))
   app.use(serveStatic(__dirname +'/lib/assets'))
   app.use(serveStatic(assets))
